@@ -367,6 +367,23 @@
     footer a { color: var(--accent); text-decoration: none; }
     .footer-socials { display: flex; gap: 12px; }
 
+    /* ──────── SCROLL REVEAL ──────── */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    [data-reveal].visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .projects-grid [data-reveal]:nth-child(2) { transition-delay: 0.1s; }
+    .projects-grid [data-reveal]:nth-child(3) { transition-delay: 0.2s; }
+    .certs-grid [data-reveal]:nth-child(2) { transition-delay: 0.1s; }
+    .certs-grid [data-reveal]:nth-child(3) { transition-delay: 0.2s; }
+    .certs-grid [data-reveal]:nth-child(4) { transition-delay: 0.3s; }
+
     /* ──────── RESPONSIVE ──────── */
     @media (max-width: 768px) {
       .sobre-grid,
@@ -394,7 +411,7 @@
     <li><a href="#home">Inicio</a></li>
     <li><a href="#sobre">Sobre mí</a></li>
     <li><a href="#git">Mis Contribuciones</a></li>
-    <li><a href="#certificaciones">Experencia Laboral</a></li>
+    <li><a href="#certificaciones">Experiencia Laboral</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
   <div class="nav-toggle" id="navToggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
@@ -426,7 +443,7 @@
 </section>
 
 <!-- SOBRE MÍ -->
-<section id="sobre">
+<section id="sobre" data-reveal="fadeUp">
   <div class="sobre-grid">
     <div class="sobre-avatar">JR</div>
     <div class="sobre-text">
@@ -458,13 +475,13 @@
 </section>
 
 <!-- PROYECTOS / GIT -->
-<section id="git">
+<section id="git" data-reveal="fadeUp">
   <p class="section-label">Proyectos</p>
   <h2 class="section-title">Mis Contribuciones</h2>
   <div class="divider"></div>
   <p class="section-subtitle">Proyectos que he construido como parte de mi aprendizaje de desarrollador de Software</p>
   <div class="projects-grid">
-    <a href="https://marketplace.intep.edu.co/" target="_blank" class="project-card">
+    <a href="https://marketplace.intep.edu.co/" target="_blank" class="project-card" data-reveal="fadeUp">
       <div class="project-icon">🌐</div>
       <div class="project-title">Marketplace Univalle</div>
       <p class="project-desc">Desarrollo de la página web “Marketplace Univalle”, una plataforma digital que permite a estudiantes con correo institucional de la Universidad del Valle comprar y vender artículos de forma segura, fomentando un entorno colaborativo e integrado dentro de la comunidad universitaria</p>
@@ -475,7 +492,7 @@
       </div>
       <span class="project-link">Ver pagina en Live →</span>
     </a>
-    <a href="#" class="project-card">
+    <a href="#" class="project-card" data-reveal="fadeUp">
       <div class="project-icon">📋</div>
       <div class="project-title">Portfolio Personal</div>
       <p class="project-desc">Este mismo portafolio: diseño responsivo, navegación suave y secciones organizadas.</p>
@@ -486,7 +503,7 @@
       </div>
       <span class="project-link">Ver demo →</span>
     </a>
-    <a href="#" class="project-card">
+    <a href="#" class="project-card" data-reveal="fadeUp">
       <div class="project-icon">🎨</div>
       <div class="project-title">Próximo proyecto</div>
       <p class="project-desc">Actualmente trabajando en la creacion de una Pagina Web de Administracion contable personal ¡Pronto disponible!</p>
@@ -499,13 +516,13 @@
 </section>
 
 <!-- CERTIFICACIONES -->
-<section id="certificaciones">
-  <p class="section-label">Experencia</p>
-  <h2 class="section-title">Mi Experencia Laboral</h2>
+<section id="certificaciones" data-reveal="fadeUp">
+  <p class="section-label">Experiencia</p>
+  <h2 class="section-title">Mi Experiencia Laboral</h2>
   <div class="divider"></div>
   <p class="section-subtitle">Mi trayectoria profesional integra análisis de datos, optimización de procesos y tecnología, impulsando soluciones eficientes que fomentan la mejora continua para las organizaciones.</p>
   <div class="certs-grid">
-    <div class="cert-card">
+    <div class="cert-card" data-reveal="fadeUp">
       <div class="cert-badge">🏅</div>
       <div>
         <div class="cert-name">I&R Analyst</div>
@@ -513,7 +530,7 @@
         <span class="cert-year">2026 – Presente</span>
       </div>
     </div>
-    <div class="cert-card">
+    <div class="cert-card" data-reveal="fadeUp">
       <div class="cert-badge">🏅</div>
       <div>
         <div class="cert-name">Manufacturing Excellence Intern- TPM</div>
@@ -521,7 +538,7 @@
         <span class="cert-year">2025 - 2026</span>
       </div>
     </div>
-    <div class="cert-card">
+    <div class="cert-card" data-reveal="fadeUp">
       <div class="cert-badge">⚡</div>
       <div>
         <div class="cert-name">Pizzeria Anttony Pizza</div>
@@ -529,11 +546,11 @@
         <span class="cert-year">2023 - 2024</span>
       </div>
     </div>
-    <div class="cert-card">
+    <div class="cert-card" data-reveal="fadeUp">
       <div class="cert-badge">🔧</div>
       <div>
         <div class="cert-name">Plasticos SION</div>
-        <div class="cert-issuer">Anlista de Datos</div>
+        <div class="cert-issuer">Analista de Datos</div>
         <span class="cert-year">2022- 2023</span>
       </div>
     </div>
@@ -541,7 +558,7 @@
 </section>
 
 <!-- CONTACTO -->
-<section id="contacto">
+<section id="contacto" data-reveal="fadeUp">
   <p class="section-label">Hablemos</p>
   <h2 class="section-title">Contacto</h2>
   <div class="divider"></div>
@@ -607,6 +624,22 @@
     </a>
   </div>
 </footer>
+
+<script>
+  // Scroll Reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('[data-reveal]').forEach(el => {
+    observer.observe(el);
+  });
+</script>
 
 </body>
 </html>
